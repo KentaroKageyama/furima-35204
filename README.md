@@ -57,7 +57,7 @@
 | Column       | Type       | Options                        |
 | ------------ | ---------- | ------------------------------ |
 | zip_code     | string     | null: false                    |
-| prefectures  | string     | null: false, foreign_key: true |
+| prefectures  | string     | null: false                    |
 | city         | string     | null: false                    |
 | address      | string     | null: false                    |
 | building     | string     |                                |
