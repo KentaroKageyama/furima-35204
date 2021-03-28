@@ -14,4 +14,6 @@ class Item < ApplicationRecord
     end
     validates :user, foreign_key: true
   end
+
+  belongs_to :user
 end
