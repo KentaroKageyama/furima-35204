@@ -8,8 +8,8 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
 
   with_options presence: true do
-    validates :name, :description, :user_id
-    with_options numericality: { other_than: 1 } do
+    validates :name, :description, :user_id, :image
+    with_options numericality: { other_than: 1 , message: "Select" } do
       validates :category_id, :condition_id, :shipping_fee_id, :shipping_add_id, :shipping_day_id
     end
   end
