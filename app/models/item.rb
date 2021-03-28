@@ -12,7 +12,7 @@ class Item < ApplicationRecord
       validates :category_id, :condition_id, :shipping_fee_id, :shipping_add_id, :shipping_day_id
     end
     validates :price, inclusion: { in: 300..9_999_999, message: 'Out of setting range' },
-                      format: { with: /\A[0-9]+\z/ }, numericality: true
+                      numericality: true
   end
 
   belongs_to :user
