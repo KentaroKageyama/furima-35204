@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :set_item
+  before_action :same_user_move_to_root_path
 
   def index
     @order_shipping_address = OrderShippingAddress.new 
@@ -33,6 +34,11 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def same_user_move_to_root_path
+    set_item
+    redirect_to root_path if current_user.id == @item.user.id
   end
 
 end
