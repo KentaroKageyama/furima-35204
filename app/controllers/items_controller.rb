@@ -57,8 +57,6 @@ class ItemsController < ApplicationController
   end
 
   def sold_out_move_to_index
-    if Order.find_by(item_id: params[:id]) != nil
-      redirect_to action: :index
-    end
+    redirect_to action: :index if Order.find_by(item_id: params[:id]) != nil
   end
 end

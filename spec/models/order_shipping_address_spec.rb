@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe OrderShippingAddress, type: :model do
   before do
     @item = FactoryBot.create(:item)
-    @order_shipping_address = FactoryBot.build(:order_shipping_address, item_id: @item.id, user_id: @item.user.id )
+    @order_shipping_address = FactoryBot.build(:order_shipping_address, item_id: @item.id, user_id: @item.user.id)
     sleep 0.1
   end
 
@@ -74,27 +74,27 @@ RSpec.describe OrderShippingAddress, type: :model do
       it 'zip_codeが半角のハイフンを含んだ正しい形式でないと購入できない' do
         @order_shipping_address.zip_code = '1234567'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Zip code is invalid. Include hyphen(-)")
+        expect(@order_shipping_address.errors.full_messages).to include('Zip code is invalid. Include hyphen(-)')
       end
       it 'prefectureを選択していないと購入できない' do
         @order_shipping_address.prefecture_id = 1
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Prefecture Select")
+        expect(@order_shipping_address.errors.full_messages).to include('Prefecture Select')
       end
       it 'phone_numberが12桁以上だと購入できない' do
         @order_shipping_address.phone_number = '012345678901'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number is too long (maximum is 11 characters)")
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is too long (maximum is 11 characters)')
       end
       it 'phone_numberが半角英字では購入できない' do
         @order_shipping_address.phone_number = 'abcde'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
       it 'phone_numberが全角数字では購入できない' do
         @order_shipping_address.phone_number = '１２３４５６７８９'
         @order_shipping_address.valid?
-        expect(@order_shipping_address.errors.full_messages).to include("Phone number is invalid")
+        expect(@order_shipping_address.errors.full_messages).to include('Phone number is invalid')
       end
     end
   end
