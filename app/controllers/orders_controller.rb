@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_item
-  before_action :same_user_move_to_root_path
+  before_action :move_to_root_path
 
   def index
     @order_shipping_address = OrderShippingAddress.new
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
     )
   end
 
-  def same_user_move_to_root_path
-    redirect_to root_path if current_user.id == @item.user.id
+  def move_to_root_path
+    redirect_to root_path if Order.find_by(item_id: @item.id) || current_user.id == @item.user.id
   end
 end
