@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe OrderShippingAddress, type: :model do
   before do
     @item = FactoryBot.create(:item)
-    @order_shipping_address = FactoryBot.build(:order_shipping_address, item_id: @item.id, user_id: @item.user.id)
+    @user = FactoryBot.create(:user)
+    @order_shipping_address = FactoryBot.build(:order_shipping_address, item_id: @item.id, user_id: @user.id)
     sleep 0.1
   end
 

@@ -40,7 +40,6 @@ class OrdersController < ApplicationController
   end
 
   def same_user_move_to_root_path
-    set_item
     redirect_to root_path if current_user.id == @item.user.id
   end
 end
