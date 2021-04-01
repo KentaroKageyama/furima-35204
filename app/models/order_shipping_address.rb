@@ -3,10 +3,11 @@ class OrderShippingAddress
   attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :address, :building, :phone_number, :token
 
   with_options presence: true do
-    validates :city, :address, :user_id, :item_id, :token
-    validates :phone_number, format: { with: /\A[0-9]+\z/ }, length: { maximum: 11 }
+    validates :token, :user_id, :item_id
     validates :zip_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
     validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
+    validates :city, :address
+    validates :phone_number, format: { with: /\A[0-9]+\z/ }, length: { maximum: 11 }
   end
 
   def save
