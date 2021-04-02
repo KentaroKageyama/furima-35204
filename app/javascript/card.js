@@ -1,5 +1,4 @@
 if (document.URL.match( /orders/ )) {
-  console.log("test")
   const pay = () => {
     Payjp.setPublicKey(process.env.PAYJP_PUBLIC_KEY);
     const form = document.getElementById("charge-form");
