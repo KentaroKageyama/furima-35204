@@ -1,0 +1,15 @@
+ja:
+ activerecord:
+   attributes:
+     user:
+       nickname: ニックネーム
+     item:
+       name: 商品名
+       description: 説明文
+       image: 画像
+       category_id: カテゴリ
+       condition_id: 商品の状態
+       shipping_fee_id: 配送料の負担
+       shipping_add_id: 発送元の地域
+       shipping_day_id: 発送までの日数
+       price: 価格
