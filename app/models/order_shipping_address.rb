@@ -4,10 +4,10 @@ class OrderShippingAddress
 
   with_options presence: true do
     validates :token, :user_id, :item_id
-    validates :zip_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'is invalid. Include hyphen(-)' }
-    validates :prefecture_id, numericality: { other_than: 1, message: 'Select' }
+    validates :zip_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/ , message: "はハイフン(-)を入れて、半角数字で入力してください"}
+    validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :city, :address
-    validates :phone_number, format: { with: /\A[0-9]+\z/ }, length: { maximum: 11 }
+    validates :phone_number, format: { with: /\A[0-9]+\z/ , message: "は半角数字のみで入力してください"}, length: { maximum: 11 }
   end
 
   def save
