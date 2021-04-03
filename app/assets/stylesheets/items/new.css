@@ -83,10 +83,16 @@
 .click-upload {
   margin: 15px 0;
   min-width: 250px;
+  max-width: 15vw;
 }
 
 .click-upload>p {
   margin-bottom: 15px;
+}
+
+.preview-image {
+  width: 150px;
+  height: 150px;
 }
 
 /* /出品画像 */
