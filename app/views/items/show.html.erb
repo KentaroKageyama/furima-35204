@@ -10,7 +10,7 @@
       <% if Order.find_by(item_id: @item.id) == nil %>
         <div class="slider">
           <% @item.images.each do |image| %>
-            <%= image_tag image, class:"slick-item-box-img" %>
+            <%= image_tag image, class:"item-box-img" %>
           <% end %>
         </div>
       <% else %>
