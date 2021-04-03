@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to :shipping_day
 
 
-    validates :image, presence: { message: "を添付してください" }
+    validates :images, presence: { message: "を添付してください" }
   with_options presence: true do
     validates :name, :description
     with_options numericality: { other_than: 1 , message: "を選択してください"} do
@@ -17,7 +17,7 @@ class Item < ApplicationRecord
                       numericality: true
   end
 
-  has_one_attached :image
+  has_many_attached :images
 
   belongs_to :user
   has_one :order
