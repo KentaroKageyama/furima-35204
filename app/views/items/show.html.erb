@@ -7,8 +7,11 @@
       <%= @item.name %>
     </h2>
     <div class="item-img-content">
-      <%= image_tag @item.images[0] ,class:"item-box-img" %>
-      
+      <div class="slider">
+        <% @item.images.each do |image| %>
+          <%= image_tag image, class:"item-box-img" %>
+        <% end %>
+      </div>
       <% if Order.find_by(item_id: @item.id) != nil %>
         <div class="sold-out">
           <span>Sold Out!!</span>
