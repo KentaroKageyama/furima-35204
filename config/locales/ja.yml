@@ -12,6 +12,7 @@ ja:
         name: 商品名
         description: 説明文
         image: 画像
+        images: 画像
         category_id: カテゴリ
         condition_id: 商品の状態
         shipping_fee_id: 配送料の負担
