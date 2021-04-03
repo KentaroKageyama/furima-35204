@@ -309,3 +309,27 @@ a {
 }
 
 /* //商品一覧 */
+
+.previews {
+  display: flex;
+  justify-content: center;
+}
+
+.slider {
+  width: 40vw;
+}
+.fa-chevron-left {
+  font-size: 50px;
+  position: absolute;
+  z-index: 100;
+  left: -100px;
+  top: 300px;
+}
+
+.fa-chevron-right {
+  font-size: 50px;
+  position: absolute;
+  z-index: 100;
+  right: -100px;
+  top: 300px
+}
