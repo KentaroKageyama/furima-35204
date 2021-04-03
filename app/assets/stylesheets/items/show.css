@@ -215,6 +215,7 @@
   width: 40vw;
 } */
 .fa-chevron-left {
+  color: #3CCACE;
   font-size: 50px;
   position: absolute;
   z-index: 100;
@@ -223,6 +224,7 @@
 }
 
 .fa-chevron-right {
+  color: #3CCACE;
   font-size: 50px;
   position: absolute;
   z-index: 100;
