@@ -90,7 +90,12 @@
       <% @item.messages.each do |message| %>
         <div class="message-container">
           <div class="message-nickname">
-            <p><%= @item.user.nickname %></p>
+            <p>
+            <%= message.user.nickname %>
+            <% if message.user.id == @item.user_id %>
+              <span class="message-item-owner">出品者</span>
+            <% end %>
+            </p>
           </div>
           <div class="message-box">
             <div class="message-text">
@@ -110,8 +115,16 @@
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%> 
-      <%= f.submit 'コメントする', class:"comment-btn" %>
+      <% if user_signed_in? %>
+        <% if Order.find_by(item_id: @item.id) == nil %>
+          <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%> 
+          <%= f.submit 'コメントする', class:"comment-btn" %>
+        <% else %>
+          <p class="comment-nobtn">売り切れのためコメントできません</p>
+        <% end %>
+      <% else %>
+        <p class="comment-nobtn">ログインユーザーのみコメントできます</p>
+      <% end %>
     <% end %>
   </div>
   <%# /コメント欄 %>

@@ -176,6 +176,17 @@
   border-radius: 100px;
   margin-bottom: 3vh;
 }
+.comment-nobtn{
+  line-height: 48px;
+  background-color: #EEEEEE;
+  border: 1px solid #3CCACE;
+  color: gray;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin: 0 auto 3vh;
+}
 
 .comment-flag {
   display: flex;
@@ -261,4 +272,10 @@
   text-align: left;
   font-size: 13px;
   color: gray;
+}
+
+.message-item-owner {
+  font-size: 10px;
+  color: white;
+  background-color: #3ccACE;
 }

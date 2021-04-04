@@ -3,8 +3,9 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
     @user = User.find(@message.user_id)
+    @item = Item.find(@message.item_id)
     if @message.save
-      ActionCable.server.broadcast 'message_channel', message: @message, user: @user
+      ActionCable.server.broadcast 'message_channel', message: @message, user: @user, item: @item
     end
   end
 
