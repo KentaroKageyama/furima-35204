@@ -84,20 +84,51 @@
   </div>
   <%# /商品の概要 %>
 
+  <%# コメント欄 %>
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
+    <div id='messages'>
+      <% @item.messages.each do |message| %>
+        <div class="message-container">
+          <div class="message-nickname">
+            <p>
+            <%= message.user.nickname %>
+            <% if message.user.id == @item.user_id %>
+              <span class="message-item-owner">出品者</span>
+            <% end %>
+            </p>
+          </div>
+          <div class="message-box">
+            <div class="message-text">
+              <p><%= message.content %></p>
+            </div>
+            <div class="message-created-at">
+            <p><%= l message.created_at %></p>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <%= form_with model: [@item, @message], url: item_messages_path(@item.id), method: :post do |f| %>
+      <%= f.text_area :content, class:"comment-text", id:"message_text" %>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <button type="submit" class="comment-btn">
-        <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
-        <span>コメントする<span>
-      </button>
-    </form>
+      <% if user_signed_in? %>
+        <% if Order.find_by(item_id: @item.id) == nil %>
+          <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%> 
+          <%= f.submit 'コメントする', class:"comment-btn" %>
+        <% else %>
+          <p class="comment-nobtn">売り切れのためコメントできません</p>
+        <% end %>
+      <% else %>
+        <p class="comment-nobtn">ログインユーザーのみコメントできます</p>
+      <% end %>
+    <% end %>
   </div>
+  <%# /コメント欄 %>
+
   <div class="links">
     <a href="#" class="change-item-btn">
       ＜ 前の商品
