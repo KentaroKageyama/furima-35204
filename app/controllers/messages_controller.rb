@@ -4,4 +4,5 @@ class MessagesController < ApplicationController
     binding.pry
     @message = Message.new(content: params[:message][:content])
   end
+  
 end
