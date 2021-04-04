@@ -88,17 +88,29 @@
   <div class="comment-box">
     <div id='messages'>
       <% @item.messages.each do |message| %>
-        <p><%= message.created_at %><%= message.content %></p>
+        <div class="message-container">
+          <div class="message-nickname">
+            <p><%= @item.user.nickname %></p>
+          </div>
+          <div class="message-box">
+            <div class="message-text">
+              <p><%= message.content %></p>
+            </div>
+            <div class="message-created-at">
+            <p><%= l message.created_at %></p>
+          </div>
+        </div>
+      </div>
       <% end %>
     </div>
     <%= form_with model: [@item, @message], url: item_messages_path(@item.id), method: :post do |f| %>
-      <%= f.text_area :content, class:"comment-text" %>
+      <%= f.text_area :content, class:"comment-text", id:"message_text" %>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
+      <%# <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%> 
       <%= f.submit 'コメントする', class:"comment-btn" %>
     <% end %>
   </div>

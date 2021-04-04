@@ -142,14 +142,14 @@
 /* /商品の概要 */
 
 .comment-box {
-  width: 40vw;
+  width: 60vw;
   background-color: #fff;
   margin: 5vh 0;
   text-align: center;
 }
 
 .comment-text {
-  width: 100%;
+  width: 95%;
   height: 100px;
   padding: 10px;
   border: solid 2px #dedede;
@@ -157,9 +157,11 @@
 }
 
 .comment-warn {
+  width: 95%;
+  background-color: #FFF6DE;
   padding: 10px;
   font-size: 14px;
-  margin: 10px 0px;
+  margin: 15px auto;
   text-align: left;
 }
 
@@ -172,7 +174,7 @@
   min-width: 150px;
   font-size: 18px;
   border-radius: 100px;
-  margin-bottom: 2vh;
+  margin-bottom: 3vh;
 }
 
 .comment-flag {
@@ -229,4 +231,34 @@
 
 .fa-chevron-right:hover {
   opacity: 0.5;
+}
+
+.message-container {
+  width: 80%;
+  margin: 20px auto;
+}
+
+.message-nickname {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 3px;
+}
+
+.message-box {
+  border-radius: 15px;
+  padding:10px 30px;
+  background-color: #EEEEEE;
+
+}
+
+.message-text {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.message-created-at {
+  text-align: left;
+  font-size: 13px;
+  color: gray;
 }
