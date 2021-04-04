@@ -88,7 +88,7 @@
   <div class="comment-box">
     <div id='messages'>
       <% @item.messages.each do |message| %>
-        <p><%= message.content %></p>
+        <p><%= message.created_at %><%= message.content %></p>
       <% end %>
     </div>
     <%= form_with model: [@item, @message], url: item_messages_path(@item.id), method: :post do |f| %>
