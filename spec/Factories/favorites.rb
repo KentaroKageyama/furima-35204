@@ -1,6 +1,5 @@
 FactoryBot.define do
-  factory :message do
-    content { Faker::Lorem.sentence }
+  factory :favorite do
     association :user
     association :item
   end

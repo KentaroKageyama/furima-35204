@@ -15,17 +15,17 @@ RSpec.describe Message, type: :model do
       it 'contentが空だとコメントできない' do
         @message.content = ''
         @message.valid?
-        expect(@message.errors.full_messages).to include("Contentを入力してください")
+        expect(@message.errors.full_messages).to include('Contentを入力してください')
       end
       it 'usetが紐づいていなければコメントできない' do
         @message.user = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("Userを入力してください")
+        expect(@message.errors.full_messages).to include('Userを入力してください')
       end
       it 'itemが紐づいていなければコメントできない' do
         @message.item = nil
         @message.valid?
-        expect(@message.errors.full_messages).to include("Itemを入力してください")
+        expect(@message.errors.full_messages).to include('Itemを入力してください')
       end
     end
   end

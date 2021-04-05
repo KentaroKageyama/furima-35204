@@ -105,19 +105,46 @@
   position: relative;
 }
 
-.favorite-btn {
+.favorite-btn-on {
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
-  color: rgb(249, 75, 0);
+  height: 44px;
+  color: rgb(249, 120, 0);
   border: 2px solid #ffb340;
+  display: block;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-right: 20px;
 }
 
-.favorite-star-icon {
+.favorite-btn-off {
+  border-radius: 40px;
+  width: 15vw;
+  min-width: 200px;
+  height: 44px;
+  color: #2d2d2d;
+  border: 2px solid #EEEEEE;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.favorite-star-icon-on {
+  color: rgb(255, 208, 0);
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+.favorite-star-icon-off {
+  color: rgb(255, 208, 0);
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
   margin-right: 5px;
 }
 
