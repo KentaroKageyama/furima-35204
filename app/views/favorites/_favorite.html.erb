@@ -1,6 +1,6 @@
         <% if user_signed_in? %>
           <% if item.favorites.where(user_id: current_user.id).exists? %>
-            <%= link_to(item_favorite_path(item.id, item.favorites.find_by(user_id: current_user.id).id), method: :delete, remote: true, class:"favorite-btn-on") do %>
+            <%= link_to(item_favorite_path(item.id, item.favorites), method: :delete, remote: true, class:"favorite-btn-on") do %>
               <i class="fas fa-star favorite-star-icon-on"></i>
               <p><span>お気に入り: <%= item.favorites.count %></span></p>
             <% end %>
