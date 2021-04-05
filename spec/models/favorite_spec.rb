@@ -15,14 +15,13 @@ RSpec.describe Favorite, type: :model do
       it 'userが紐づいていないと登録できない' do
         @favorite.user = nil
         @favorite.valid?
-        expect(@favorite.errors.full_messages).to include("Userを入力してください")
+        expect(@favorite.errors.full_messages).to include('Userを入力してください')
       end
       it 'itemが紐づいていないと登録できない' do
         @favorite.item = nil
         @favorite.valid?
-        expect(@favorite.errors.full_messages).to include("Itemを入力してください")
+        expect(@favorite.errors.full_messages).to include('Itemを入力してください')
       end
     end
   end
-
 end
