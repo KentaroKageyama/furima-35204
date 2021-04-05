@@ -75,7 +75,15 @@
     <%# お気に入り登録 %>
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り </span><span><%= @item.favorites.length %></span>
+        <% if user_signed_in? %>
+          <% if @item.favorites.where(user_id: current_user.id).exists? %>
+            <p><span>お気に入り数1: </span><%=link_to @item.favorites.count, item_favorite_path(@item.id), method: :delete %></p>
+          <% else %>
+            <p><span>お気に入り数2: </span><%=link_to @item.favorites.count, item_favorites_path(@item.id), method: :post %></p>
+          <% end %>
+        <% else %>
+          <p><span>お気に入り数3: </span><%= @item.favorites.count %></p>
+        <% end %>
       </div>
     <%# /お気に入り登録 %>
       <div class="report-btn">
