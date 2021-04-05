@@ -72,10 +72,12 @@
       </tbody>
     </table>
     <div class="option">
+    <%# お気に入り登録 %>
       <div class="favorite-btn">
         <%= image_tag "star.png" ,class:"favorite-star-icon" ,width:"20",height:"20"%>
-        <span>お気に入り 0</span>
+        <span>お気に入り </span><span><%= @item.favorites.length %></span>
       </div>
+    <%# /お気に入り登録 %>
       <div class="report-btn">
         <%= image_tag "flag.png" ,class:"report-flag-icon" ,width:"20",height:"20"%>
         <span>不適切な商品の通報</span>
