@@ -1,1 +1,174 @@
-<h1>test</h1>
+<%= render "shared/header" %>
+
+<div class="mypage-show">
+  <div class="mypage-box">
+
+    <%# サイドバー %>
+    <div class="mypage-side">
+      <ul class="side-items">
+        <%= link_to(user_path(anchor: 'sell')) do %>
+          <li class="side-item">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>出品した商品</p>
+          </li>
+        <% end %>
+        <%= link_to(user_path(anchor: 'buy')) do %>
+          <li class="side-item">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>購入した商品</p>
+          </li>
+        <% end %>
+        <%= link_to(user_path(anchor: 'fav')) do %>
+          <li class="side-item">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>お気に入り商品</p>
+          </li>
+        <% end %>
+      </ul>
+
+      <ul class ="side-infos">設定
+        <%= link_to(edit_user_registration_path) do %>
+          <li class="side-info">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>登録情報</p>
+          </li>
+        <% end %>
+        <%= link_to("#") do %>
+          <li class="side-info">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>クレジットカード情報</p>
+          </li>
+        <% end %>
+        <%= link_to(destroy_user_session_path, method: :delete) do %>
+          <li class="side-info">
+            <i class="far fa-square"></i>
+            <i class="fas fa-square active"></i>
+            <p>ログアウト</p>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <%# /サイドバー %>
+
+    <%# メイン %>
+    <div class="mypage-main">
+      <%# メインヘッダー %>
+      <div class="main-header">
+        <h2>マイページ</h2>
+        <h3><%= @user.nickname %></h3>
+      </div>
+      <%# /メインヘッダー %>
+      <%# メインボディー %>
+      <div class="main-body">
+        <%# 出品した商品 %>
+        <div class='item-contents'>
+          <p class="subtitle", id='sell'>出品した商品</p>
+          <ul class='item-lists'>
+            <% @user.items.each do |item| %>
+              <li class='list'>
+                <%= link_to item_path(item.id) do %>
+                  <div class='item-img-content'>
+                    <%= image_tag item.images[0], class: 'item-img' %>
+                    <% if Order.find_by(item_id: item.id) != nil %>
+                      <div class='sold-out'>
+                      <span>Sold Out!!</span>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= item.name %>
+                    </h3>
+                    <div class='item-price'>
+                      <span><%= item.price %>円<br><%= item.shipping_fee.name %></span>
+                      <div class='star-btn'>
+                        <%= image_tag "star.png", class:"star-icon" %>
+                        <span class='star-count'>0</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        
+        <%# 購入した商品 %>
+        <div class='item-contents'>
+          <p class="subtitle", id='buy'>購入した商品</p>
+          <ul class='item-lists'>
+            <% @user.items.each do |item| %>
+              <li class='list'>
+                <%= link_to item_path(item.id) do %>
+                  <div class='item-img-content'>
+                    <%= image_tag item.images[0], class: 'item-img' %>
+                    <% if Order.find_by(item_id: item.id) != nil %>
+                      <div class='sold-out'>
+                      <span>Sold Out!!</span>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= item.name %>
+                    </h3>
+                    <div class='item-price'>
+                      <span><%= item.price %>円<br><%= item.shipping_fee.name %></span>
+                      <div class='star-btn'>
+                        <%= image_tag "star.png", class:"star-icon" %>
+                        <span class='star-count'>0</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+        
+        <%# 出品した商品 %>
+        <div class='item-contents'>
+          <p class="subtitle", id='fav'>お気に入り商品</p>
+          <ul class='item-lists'>
+            <% @user.favorite_items.each do |item| %>
+              <li class='list'>
+                <%= link_to item_path(item.id) do %>
+                  <div class='item-img-content'>
+                    <%= image_tag item.images[0], class: 'item-img' %>
+                    <% if Order.find_by(item_id: item.id) != nil %>
+                      <div class='sold-out'>
+                      <span>Sold Out!!</span>
+                      </div>
+                    <% end %>
+                  </div>
+                  <div class='item-info'>
+                    <h3 class='item-name'>
+                      <%= item.name %>
+                    </h3>
+                    <div class='item-price'>
+                      <span><%= item.price %>円<br><%= item.shipping_fee.name %></span>
+                      <div class='star-btn'>
+                        <%= image_tag "star.png", class:"star-icon" %>
+                        <span class='star-count'>0</span>
+                      </div>
+                    </div>
+                  </div>
+                <% end %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+      <%# /メインボディー %>
+    </div>
+    <%# /メイン %>
+
+  </div>
+</div>
+
+<%= render "shared/footer" %>
