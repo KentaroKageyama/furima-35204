@@ -153,12 +153,12 @@ li {
   padding: 5vh 0;
 }
 
-.subtitle {
-  font-size: 2vh;
+.item-contents .subtitle {
+  font-size: 18px;
   margin: 1vh 0;
-  text-decoration: none;
   color: #3ccace;
   font-weight: bold;
+  float: left;
 }
 
 .item-lists {
@@ -230,4 +230,9 @@ li {
 
 .star-count {
   font-size: 2vh;
+}
+
+.no-item {
+  color: rgb(148, 148, 148);
+  margin: 50px auto;
 }

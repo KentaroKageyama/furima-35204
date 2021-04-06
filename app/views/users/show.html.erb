@@ -68,6 +68,7 @@
         <%# 出品した商品 %>
         <div class='item-contents'>
           <p class="subtitle", id='sell'>出品した商品</p>
+          <% if @user.items.exists? %>
           <ul class='item-lists'>
             <% @user.items.each do |item| %>
               <li class='list'>
@@ -96,13 +97,17 @@
               </li>
             <% end %>
           </ul>
+          <% else %>
+            <p class="no-item">出品した商品がありません</p>
+          <% end %>
         </div>
         
         <%# 購入した商品 %>
         <div class='item-contents'>
           <p class="subtitle", id='buy'>購入した商品</p>
+          <% if @user.order_items.exists? %>
           <ul class='item-lists'>
-            <% @user.items.each do |item| %>
+            <% @user.order_items.each do |item| %>
               <li class='list'>
                 <%= link_to item_path(item.id) do %>
                   <div class='item-img-content'>
@@ -129,11 +134,15 @@
               </li>
             <% end %>
           </ul>
+          <% else %>
+            <p class="no-item">購入した商品がありません</p>
+          <% end %>
         </div>
         
         <%# 出品した商品 %>
         <div class='item-contents'>
           <p class="subtitle", id='fav'>お気に入り商品</p>
+          <% if @user.favorite_items.exists? %>
           <ul class='item-lists'>
             <% @user.favorite_items.each do |item| %>
               <li class='list'>
@@ -162,6 +171,9 @@
               </li>
             <% end %>
           </ul>
+          <% else %>
+            <p class="no-item">お気に入りにした商品がありません</p>
+          <% end %>
         </div>
       </div>
       <%# /メインボディー %>
