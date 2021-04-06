@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :messages, only: :create
     resources :favorites, only: [:create, :destroy]
   end
+  resources :users, only: [:show]
 end
