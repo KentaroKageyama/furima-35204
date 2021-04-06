@@ -20,6 +20,6 @@ class Item < ApplicationRecord
 
   belongs_to :user
   has_one :order
-  has_many :messages
+  has_many :messages, dependent: :destroy
   has_many :favorites
 end

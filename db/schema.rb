@@ -108,10 +108,8 @@ ActiveRecord::Schema.define(version: 2021_04_05_025438) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "favorites", "items"
   add_foreign_key "favorites", "users"
   add_foreign_key "items", "users"
-  add_foreign_key "messages", "items"
   add_foreign_key "messages", "users"
   add_foreign_key "orders", "items"
   add_foreign_key "orders", "users"
