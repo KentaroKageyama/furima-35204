@@ -24,4 +24,5 @@ class User < ApplicationRecord
   has_many :messages
   has_many :favorites
   has_many :favorite_items, through: :favorites, source: :item
+  has_many :order_items, through: :orders, source: :item
 end
