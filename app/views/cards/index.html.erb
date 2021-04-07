@@ -11,14 +11,14 @@
           <p>カード番号: <%= "**** **** **** " + @card[:last4] %></p>
           <p>有効期限: <%= @card[:exp_month] %>/<%= @card[:exp_year] %></p>
         </div>
-        <%= link_to '登録カードを削除', card_path(@user.card.id), method: :delete %>
+        <%= link_to '登録カードを削除', card_path(@user.card.id), method: :delete, class:"card-delete" %>
       <% else %>
         <div class="no_Card_info">
           <p class="no_Card_message">クレジットカードは登録されていません<p>
-          <p class="no_Card_registration"><i class="far fa-credit-card"></i><%= link_to 'クレジットカードを登録', "#" %></p>
+          <p class="no_Card_registration"><i class="far fa-credit-card"></i><%= link_to 'クレジットカードを登録', new_card_path %></p>
         </div>
       <% end %>
-      <%= link_to '戻る', :back, class:"back-link" %>
+      <%= link_to '戻る', 'javascript:history.back()', class:"back-link" %>
     </div>
   </div>
   <%= render partial: "footer"%>

@@ -28,7 +28,7 @@ class CardsController < ApplicationController
       user_id: current_user.id # ログインしているユーザー
     )
     if card.save
-      redirect_to root_path
+      redirect_to action: :index
     else
       redirect_to "new" # カード登録画面
     end
@@ -38,7 +38,7 @@ class CardsController < ApplicationController
   def destroy
     card = Card.find(params[:id])
     card.destroy
-    redirect_to :index
+    redirect_to action: :index
   end
 
 
