@@ -1,4 +1,4 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+if (document.URL.match( /items\/new/ ) || document.URL.match( /items\/.*\/edit/ )) {
   function calc (){
     const price = document.getElementById("item-price");
     price.addEventListener("input", () => {

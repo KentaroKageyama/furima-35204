@@ -1,0 +1,174 @@
+.card-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.card-furima-icon {
+  width: 15vw;
+  margin: 8vh;
+}
+
+.show-main {
+  width: 100%;
+}
+
+.main-box {
+  width: 60%;
+  height: 100%;
+  background-color: #FFF;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 40px 0;
+}
+
+.Card_subtitle {
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+.Card_info {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.card-delete {
+  color: rgb(253, 77, 54)
+}
+
+.no_Card_info {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.no_Card_message {
+  color:gray;
+  margin: 30px;
+}
+
+.no_Card_registration a {
+  color: rgb(0, 183, 255);
+}
+
+.fa-credit-card {
+  font-size:16px;
+  color:skyblue;
+}
+
+.back-link {
+  margin: 30px 0 35px;
+  color: skyblue;
+  font-size: 15px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8vh;
+}
+
+.logo-gray {
+  width: 10vw;
+}
+
+.copyright {
+  color: rgba(0, 0, 0, 0.603);
+  font-size: 12px;
+}
+
+// カード登録ページ
+
+.card-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px 0 10px;
+}
+
+.card-form-wrap {
+  width: 35%;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.card-label {
+  margin-bottom: 8px;
+}
+
+.date-wrap {
+  line-height: 50px;
+  display: flex;
+}
+
+.date-wrap p {
+  margin-right: 10px;
+}
+
+.number {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.cvc {
+  width: 100%;
+  height: 35px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.exp_month {
+  width: 45%;
+  height: 35px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  margin-right: 10px;
+  padding:5px 10px;
+}
+
+.exp_year {
+  width: 45%;
+  height: 35px;
+  border: 1px solid #CCC;
+  border-radius: 4px;
+  margin-right: 10px;
+  padding: 5px 10px;
+}
+
+.card-button {
+  width: 35%;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  line-height: 48px;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 20px;
+  border-radius: 4px;
+}
+
+.card-logo {
+  width: 40px;
+  margin: 5px 5px;
+}

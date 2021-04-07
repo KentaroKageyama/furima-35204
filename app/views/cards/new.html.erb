@@ -1,0 +1,36 @@
+<div class="card-show">
+  <%= render partial: 'header' %>
+  <div class="main-box">
+    <%= form_with  url: cards_path, id: 'charge-form', class: 'card-form',local: true do |f| %>
+      <div class="Cardpage">
+        <h1 class="card-title">クレジットカード登録</h1>
+      </div>
+      <div class='card-form-wrap'>
+        <p class="card-label"><%= f.label :number, "カード番号" %></p>
+        <%= f.text_field :number, class:"number", placeholder:"カード番号(半角英数字)", maxlength:"16" %>
+        <div class='available-card'>
+          <%= image_tag 'card-visa.gif', class: 'card-logo'%>
+          <%= image_tag 'card-mastercard.gif', class: 'card-logo'%>
+          <%= image_tag 'card-jcb.gif', class: 'card-logo'%>
+          <%= image_tag 'card-amex.gif', class: 'card-logo'%>
+        </div>
+      </div>
+      <div class='card-form-wrap'>
+        <p class="card-label"><%= f.label :cvc ,"CVC" %></p>
+        <%= f.text_field :cvc, class:"cvc", placeholder:"カード背面にある3桁の番号", maxlength:"4" %>
+      </div>
+      <div class='card-form-wrap'>
+        <p class="card-label">有効期限</p>
+        <div class='date-wrap'>
+          <%= f.select :exp_month, 1..12, {include_blank: "---"}, class: "exp_month" %>
+          <p>月</p>
+          <%= f.select :exp_year, 22..27, {include_blank: "---"}, class: "exp_year" %>
+          <p>年</p>
+        </div>
+      </div>
+      <%= f.submit "登録する" , class:"card-button" %>
+    <% end %>
+    <%= link_to '戻る', :back, class:"back-link" %>
+  </div>
+  <%= render partial: 'footer' %>
+</div>

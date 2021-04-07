@@ -82,12 +82,7 @@
 
 /* /支払額の表示 */
 
-/* カード情報の入力 */
-.credit-card-form {
-  border-bottom: 2px solid #f5f5f5;
-  margin-top: 15px;
-  padding-bottom: 30px;
-}
+/* カード情報の表示 */
 
 .info-input-haedline {
   text-align: center;
@@ -95,34 +90,59 @@
   font-size: 20px;
 }
 
-.available-card {
+.credit-card-info {
+  margin: 20px 0;
   display: flex;
-  height: 35px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.card-logo {
-  width: 40px;
-  margin: 5px 5px;
+.card-title {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 40px 0;
 }
 
-.input-expiration-date-wrap {
-  width: 100%;
+.Card_subtitle {
+  margin: 16px 0;
+  font-weight: bold;
+}
+
+.Card_info {
+  font-size: 14px;
+  margin: 30px 0;
+}
+
+.Card_registration {
+  color: rgb(0, 183, 255);
+  margin-bottom: 10px;
+}
+
+.card-delete {
+  color: rgb(253, 77, 54)
+}
+
+.no_Card_info {
+  font-size: 14px;
   display: flex;
-  text-align: center;
-  line-height: 55px;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-.input-expiration-date {
-  width: 20%;
-  margin-top: 5px;
-  height: 48px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  font-size: 16px;
-  resize: none;
-  line-height: 45px;
-  text-align: center;
+.no_Card_message {
+  color:gray;
+  margin: 30px;
+}
+
+.no_Card_registration a {
+  color: rgb(0, 183, 255);
+}
+
+.fa-credit-card {
+  font-size:16px;
+  color:skyblue;
 }
 
 /* /カード情報の入力 */
@@ -140,18 +160,32 @@
   padding: 2px 4px;
 }
 
-.buy-btn {
+.buy-btn{
   width: 50%;
   margin: 0 auto;
   margin-top: 50px;
 }
 
-.buy-red-btn {
+.buy-btn input{
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
   color: #fff;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+.no-buy-btn {
+  margin: 50px auto;
+  width: 50%;
+  background: #3CCACE;
+  border: 1px solid #3CCACE;
+  color: #fff;
+  line-height: 48px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
 }

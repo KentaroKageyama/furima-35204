@@ -37,7 +37,7 @@
             <p>登録情報</p>
           </li>
         <% end %>
-        <%= link_to("#") do %>
+        <%= link_to(cards_path) do %>
           <li class="side-info">
             <i class="far fa-square"></i>
             <i class="fas fa-square active"></i>
@@ -59,8 +59,8 @@
     <div class="mypage-main">
       <%# メインヘッダー %>
       <div class="main-header">
-        <h2>マイページ</h2>
-        <h3><%= @user.nickname %></h3>
+        <h2><%= @user.nickname %></h2>
+        <h3>マイページ</h3>
       </div>
       <%# /メインヘッダー %>
       <%# メインボディー %>
