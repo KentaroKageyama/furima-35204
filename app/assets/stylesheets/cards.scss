@@ -162,8 +162,13 @@ footer {
   border: 1px solid #3CCACE;
   color: #fff;
   line-height: 48px;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   margin: 20px;
+  border-radius: 4px;
 }
 
+.card-logo {
+  width: 40px;
+  margin: 5px 5px;
+}

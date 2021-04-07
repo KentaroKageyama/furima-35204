@@ -5,10 +5,28 @@ class OrdersController < ApplicationController
 
   def index
     @order_shipping_address = OrderShippingAddress.new
+
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    card = Card.find_by(user_id: current_user.id)
+
+    if card.present?
+      customer = Payjp::Customer.retrieve(card.customer_token)
+      @card = customer.cards.first
+    end
+
   end
 
   def create
     @order_shipping_address = OrderShippingAddress.new(order_params)
+
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    card = Card.find_by(user_id: current_user.id)
+
+    if card.present?
+      customer = Payjp::Customer.retrieve(card.customer_token)
+      @card = customer.cards.first
+    end
+
     if @order_shipping_address.valid?
       pay_item
       @order_shipping_address.save
@@ -32,11 +50,12 @@ class OrdersController < ApplicationController
 
   def pay_item
     Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    customer_token = current_user.card.customer_token
     Payjp::Charge.create(
       amount: @item.price,
-      card: order_params[:token],
+      customer: customer_token,
       currency: 'jpy'
-    )
+    ) 
   end
 
   def move_to_root_path

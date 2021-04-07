@@ -18,7 +18,7 @@
           <p class="no_Card_registration"><i class="far fa-credit-card"></i><%= link_to 'クレジットカードを登録', new_card_path %></p>
         </div>
       <% end %>
-      <%= link_to '戻る', 'javascript:history.back()', class:"back-link" %>
+      <%= link_to 'マイページへ戻る', user_path(current_user.id), class:"back-link" %>
     </div>
   </div>
   <%= render partial: "footer"%>

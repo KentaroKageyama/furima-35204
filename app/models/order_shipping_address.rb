@@ -3,7 +3,7 @@ class OrderShippingAddress
   attr_accessor :user_id, :item_id, :zip_code, :prefecture_id, :city, :address, :building, :phone_number, :token
 
   with_options presence: true do
-    validates :token, :user_id, :item_id
+    validates :user_id, :item_id
     validates :zip_code, format: { with: /\A[0-9]{3}-[0-9]{4}\z/, message: 'はハイフン(-)を入れて、半角数字で入力してください' }
     validates :prefecture_id, numericality: { other_than: 1, message: 'を選択してください' }
     validates :city, :address
