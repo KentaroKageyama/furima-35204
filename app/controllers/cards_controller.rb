@@ -1,9 +1,22 @@
 class CardsController < ApplicationController
+  before_action :authenticate_user!
+
+  def index
+    Payjp.api_key = ENV["PAYJP_SECRET_KEY"]
+    card = Card.find_by(user_id: current_user.id)
+
+    if card.present?
+      customer = Payjp::Customer.retrieve(card.customer_token) # 先程のカード情報を元に、顧客情報を取得
+      @card = customer.cards.first
+    end
+
+    @user = User.find(current_user.id)
+  end
+
   def new
   end
 
   def create
-    binding.pry
     Payjp.api_key = ENV["PAYJP_SECRET_KEY"] # 環境変数を読み込む
     customer = Payjp::Customer.create(
     description: 'test', # テストカードであることを説明
@@ -19,6 +32,14 @@ class CardsController < ApplicationController
     else
       redirect_to "new" # カード登録画面
     end
+
   end
+
+  def destroy
+    card = Card.find(params[:id])
+    card.destroy
+    redirect_to :index
+  end
+
 
 end

@@ -1,3 +1,90 @@
-// Place all the styles related to the cards controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.card-show {
+  background-color: #f8f8f8;
+  width: 100vw;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header .furima-icon {
+  width: 15vw;
+  margin: 8vh;
+}
+
+.show-main {
+  width: 100%;
+}
+
+.main-box {
+  width: 60%;
+  height: 100%;
+  background-color: #FFF;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 25px;
+  margin: 40px 0;
+}
+
+.Card_subtitle {
+  margin: 12px 0;
+}
+
+.Card_info {
+  font-size: 14px;
+  margin-bottom: 30px;
+  
+}
+
+.no_Card_info {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.no_Card_message {
+  color:gray;
+  margin: 30px;
+}
+
+.no_Card_registration a {
+  color: rgb(0, 183, 255);
+}
+
+.fa-credit-card {
+  font-size:16px;
+  color:skyblue;
+}
+
+.back-link {
+  margin: 50px 0 35px;
+  color: skyblue;
+  font-size: 16px;
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8vh;
+}
+
+.logo-gray {
+  width: 10vw;
+}
+
+.copyright {
+  color: rgba(0, 0, 0, 0.603);
+  font-size: 12px;
+}
