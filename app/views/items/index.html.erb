@@ -145,8 +145,12 @@
             <div class='item-price'>
               <span><%= item.price %>円<br><%= item.shipping_fee.name %></span>
               <div class='star-btn'>
-                <%= image_tag "star.png", class:"star-icon" %>
-                <span class='star-count'>0</span>
+                <% if item.favorites.count >= 1 %>
+                  <i class="fas fa-star fav-star-icon-on"></i>
+                <% else %>
+                  <i class="far fa-star fav-star-icon-on"></i>
+                <% end %>
+                <span class='star-count'><%= item.favorites.count %></span>
               </div>
             </div>
           </div>

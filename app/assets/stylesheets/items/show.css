@@ -135,16 +135,12 @@
 
 .favorite-star-icon-on {
   color: rgb(255, 208, 0);
-  width: 20px;
-  height: 20px;
-  margin-top: 3px;
+  font-size: 16px;
   margin-right: 5px;
 }
 .favorite-star-icon-off {
   color: rgb(255, 208, 0);
-  width: 20px;
-  height: 20px;
-  margin-top: 3px;
+  font-size: 16px;
   margin-right: 5px;
 }
 
